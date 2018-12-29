@@ -1,0 +1,59 @@
+﻿<div class="container">
+  <div class="row">
+      <div class="col-md-8">
+          <div class="card border-danger card-shadow mt-5 mb-5">
+              <div class="card-header bg-danger">
+                <h5 class="text-white">{{pageTitle}}</h5>
+              </div>
+              <div class="card-body">
+                    <table class="table table-hover table-danger">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Breed</th>
+                            <th scope="col">Pic</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pic of pics; let i = index" [attr.data-index]="i">
+                              <td>
+                                {{i+1}}
+                              </td>
+                              <td>
+                                {{pic.split("/")[4]}}
+                              </td>
+                              <td>
+                                  <img [src]="pic" height="80" width="80"/>
+                              </td>
+                            </tr>
+                        </tbody>
+                      </table>
+              </div>
+            </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card border-danger card-shadow mt-5 mb-5">
+              <div class="card-header bg-danger">
+                <h5 class="text-white">SEARCH BOX</h5>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7 mt-1">
+                      <input [(ngModel)]="searchText" class="form-control form-control-sm  border-danger" type="text" placeholder="Search by breed">
+                  </div>
+                  <div class="col-lg-5 col-md-5 col-sm-5 mt-1 text-right">
+                      <button type="button" (click)="searchByBreed()" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                          Search
+                        </button>
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-12">
+                        <img class="img-fluid mt-3" [src]="searchPic" />
+                      </div>
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
