@@ -8,7 +8,6 @@ import { DogService } from './dog.service';
 })
 export class DogComponent implements OnInit{
   public pageTitle: String = 'DOG LIST';
-  public breeds: any;
   public pics: any;
   public searchText: String;
   public searchPic = '../../assets/images/default.png';
